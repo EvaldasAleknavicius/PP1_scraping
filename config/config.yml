@@ -1,0 +1,9 @@
+num_of_pages_to_scrape : 2    # interval from 2 to 10
+time_to_sleep : 0.6            #time to sleep before scraping the next page in seconds
+format_for_saving : xlsx      #two options available: xlsx or csv
+
+logging:
+  filename: 'logs/main.log'
+  level: 'DEBUG'
+  format: '%(asctime)s - %(message)s'
+  datefmt: '%Y-%m-%d %H:%M:%S'
