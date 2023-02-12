@@ -8,6 +8,7 @@ from src import logging_manager as log
 with open('config/config.yml') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 
+mainurl = config['url']
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
 
 
@@ -15,7 +16,7 @@ headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 productslinks = []
 def get_links():
     for x in range(1, config['num_of_pages_to_scrape']):
-        url = f'https://50style.lt/vyrams/avalyne?page={x}'
+        url = f'{mainurl}{x}'
         r = requests.get(url, headers=headers)
         soup = BeautifulSoup(r.content, 'html.parser')
         productslist = soup.find_all('div', {'class': 'b-itemList_desc'})

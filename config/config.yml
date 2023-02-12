@@ -1,6 +1,7 @@
 num_of_pages_to_scrape : 2    # interval from 2 to 10
 time_to_sleep : 0.6            #time to sleep before scraping the next page in seconds
 format_for_saving : xlsx      #two options available: xlsx or csv
+url: https://50style.lt/vyrams/avalyne?page=
 
 logging:
   filename: 'logs/main.log'
